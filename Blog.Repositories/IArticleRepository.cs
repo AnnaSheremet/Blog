@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Blog.Repositories
 {
-    class Class1
+    interface IArticleRepository
     {
+        List<Article> GetPublished();
     }
 }

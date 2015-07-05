@@ -17,3 +17,8 @@ CREATE TABLE Users(
 	Gender varchar(10) NOT NULL CHECK (Gender IN('female', 'male')),
 	Date_of_registration DATE NOT NULL		)
 
+CREATE TABLE Aticle(
+	Id int not null indentity (1,1),
+	AuthoreId int not null,
+	Title nvarchar()
+)
