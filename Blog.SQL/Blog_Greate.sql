@@ -1,7 +1,12 @@
 CREATE DATABASE DB_Blog --створення 
 GO
 
+drop DATABASE DB_Blog
+
 USE DB_Blog
+GO
+
+USE Blog_bd
 GO
 
 CREATE TABLE Users(
@@ -16,7 +21,7 @@ CREATE TABLE Users(
 	Date_of_registration DATE NOT NULL	
 )
 
-CREATE TABLE Aticle(
+CREATE TABLE Article(
 	Id int not null IDENTITY (1,1) PRIMARY KEY,
 	AuthoreId int not null foreign key REFERENCES Users(ID_User),
 	Title nvarchar(255) not null,
