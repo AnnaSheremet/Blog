@@ -1,5 +1,19 @@
-﻿@{
-    ViewBag.Title = "Index";
-}
+﻿@using Blog.Entities
 
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/View/Shared/_layout.cshtml";
+}
+@{
+    List<Article> articles = ViewBag.Articles;
+}
 <h2>Index</h2>
+<div>
+    <ul>
+        @foreach (var article in articles)
+        { 
+        <li>@article.Title</li>
+        }
+    </ul>
+</div>

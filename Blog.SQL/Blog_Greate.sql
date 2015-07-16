@@ -2,12 +2,15 @@ CREATE DATABASE DB_Blog --створення
 GO
 
 drop DATABASE DB_Blog
+drop table Article
+drop table Users
 
 USE DB_Blog
 GO
 
 USE Blog_bd
 GO
+select * from Users
 
 CREATE TABLE Users(
 	ID_User INT IDENTITY(1,1) PRIMARY KEY,
@@ -16,9 +19,10 @@ CREATE TABLE Users(
 	Surname VARCHAR(50),
 	Passwords CHAR(12) NOT NULL,
 	Date_of_birth DATE,
-	roles VARCHAR(6) NOT NULL CHECK (roles IN('user','admin')) DEFAULT 'user',
+	IsAdmin bit DEFAULT 0,
 	Gender varchar(10) NOT NULL CHECK (Gender IN('female', 'male')),
-	Date_of_registration DATE NOT NULL	
+	Date_of_registration DATE NOT NULL,
+	IsEnable bit DEFAULT 1
 )
 
 CREATE TABLE Article(
