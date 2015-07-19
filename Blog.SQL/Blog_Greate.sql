@@ -8,8 +8,7 @@ drop table Users
 USE DB_Blog
 GO
 
-USE Blog_bd
-GO
+
 select * from Users
 
 CREATE TABLE Users(
@@ -34,3 +33,8 @@ CREATE TABLE Article(
 	Published bit not null,
 	Comment bit not null
 )
+
+select * from Article
+
+metadata=res://*/BlogEntities.csdl|res://*/BlogEntities.ssdl|res://*/BlogEntities.msl;provider=System.Data.SqlClient;provider connection string="data source=Ÿ-¿Õﬂ-œ \ANNA;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
+
