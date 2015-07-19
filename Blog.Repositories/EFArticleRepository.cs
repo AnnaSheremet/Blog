@@ -22,6 +22,7 @@ namespace Blog.Repositories
             this._connectionString = ConfigurationManager.ConnectionStrings["BlogEntities"].ConnectionString;
         }
 
+
         public EFArticleRepository(string connectionString)
         {
             this._connectionString = connectionString;

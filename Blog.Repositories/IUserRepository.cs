@@ -12,6 +12,5 @@ namespace Blog.Repositories
     {
         Users GetUser(string login, string password);
         List<Users> GetUsers();
-
     }
 }
