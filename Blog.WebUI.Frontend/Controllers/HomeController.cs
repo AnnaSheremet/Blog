@@ -6,17 +6,19 @@ using System.Web.Mvc;
 
 using Blog.Repositories;
 using System.Configuration;
+using Blog.Entities;
 
 namespace Blog.WebUI.Frontend.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IArticleRepository _articleRepository;
+        private readonly EFArticleRepository _articleRepository;
 
         public HomeController()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyBlog"].ConnectionString;
-            this._articleRepository = new EFArticleRepository(connectionString);
+            //string connectionString = ConfigurationManager.ConnectionStrings["MyBlog"].ConnectionString;
+            //this._articleRepository = new EFArticleRepository(connectionString);
+            this._articleRepository = new EFArticleRepository();
 
         }
 
@@ -25,7 +27,7 @@ namespace Blog.WebUI.Frontend.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var articles = this._articleRepository.GetPublished();
+            List<Article> articles = this._articleRepository.GetPublished();
             return View();
         }
 

@@ -10,7 +10,7 @@ using Blog.Entities;
 
 namespace Blog.Repositories
 {
-    class EFArticleRepository: IArticleRepository
+    public class EFArticleRepository: IArticleRepository
     {
         #region Fields
         private readonly string _connectionString;
@@ -19,7 +19,7 @@ namespace Blog.Repositories
         #region Constructors
         public EFArticleRepository()
         {
-            this._connectionString = ConfigurationManager.ConnectionStrings["MyBlog"].ConnectionString;
+            this._connectionString = ConfigurationManager.ConnectionStrings["BlogEntities"].ConnectionString;
         }
 
         public EFArticleRepository(string connectionString)

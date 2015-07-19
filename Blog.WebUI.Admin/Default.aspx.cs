@@ -13,5 +13,10 @@ namespace Blog.WebUI.Admin
         {
 
         }
+
+        protected void ObjectDataSource1_Updating(object sender, ObjectDataSourceMethodEventArgs e)
+        {
+
+        }
     }
 }

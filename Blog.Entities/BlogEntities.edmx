@@ -57,7 +57,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_BlogModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="DB_BlogEntities4" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB_BlogEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Article" EntityType="DB_BlogModel.Article" />
           <EntitySet Name="Users" EntityType="DB_BlogModel.Users" />
           <AssociationSet Name="FK__Article__Authore__24927208" Association="DB_BlogModel.FK__Article__Authore__24927208">
@@ -111,7 +111,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DB_BlogModelStoreContainer" CdmEntityContainer="DB_BlogEntities4">
+        <EntityContainerMapping StorageEntityContainer="DB_BlogModelStoreContainer" CdmEntityContainer="DB_BlogEntities">
           <EntitySetMapping Name="Article">
             <EntityTypeMapping TypeName="DB_BlogModel.Article">
               <MappingFragment StoreEntitySet="Article">
