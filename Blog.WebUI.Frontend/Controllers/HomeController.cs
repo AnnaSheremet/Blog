@@ -16,9 +16,9 @@ namespace Blog.WebUI.Frontend.Controllers
 
         public HomeController()
         {
-            //string connectionString = ConfigurationManager.ConnectionStrings["MyBlog"].ConnectionString;
-            //this._articleRepository = new EFArticleRepository(connectionString);
-            this._articleRepository = new EFArticleRepository();
+            string connectionString = ConfigurationManager.ConnectionStrings["BlogEntities"].ConnectionString;
+            this._articleRepository = new EFArticleRepository(connectionString);
+            //this._articleRepository = new EFArticleRepository();
 
         }
 
@@ -28,6 +28,7 @@ namespace Blog.WebUI.Frontend.Controllers
         public ActionResult Index()
         {
             List<Article> articles = this._articleRepository.GetPublished();
+            ViewBag.Articles = articles;
             return View();
         }
 

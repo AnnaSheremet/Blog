@@ -11,5 +11,8 @@ namespace Blog.Repositories
     public interface IArticleRepository
     {
         List<Article> GetPublished();
+        void AddArticle(Article article);
+        List<Article> GetUsersArticle(int id);
+        void EditArticle(int id, string content);
     }
 }

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Blog.Repositories
 {
-    class EFUserRepository : IUserRepository
+    public class EFUserRepository : IUserRepository
     {
         #region Fields
         private readonly string _connectionString;
@@ -24,7 +24,7 @@ namespace Blog.Repositories
         }
         public EFUserRepository()
         {
-            this._connectionString = ConfigurationManager.ConnectionStrings["DB_BlogEntities"].ConnectionString;
+            this._connectionString = ConfigurationManager.ConnectionStrings["BlogEntities"].ConnectionString;
         }
         #endregion
 
@@ -38,11 +38,14 @@ namespace Blog.Repositories
 
         public List<Users> GetUsers()
         {
-
-            DB_BlogEntities entities = new DB_BlogEntities();
-            var user_ = from user in entities.Users select user;
-            List<Users> users = user_.ToList();
-            return users;
+            using (ObjectContext context = new ObjectContext(_connectionString))
+            {
+                return context.CreateObjectSet<Users>().ToList();
+            }
+            //DB_BlogEntities entities = new DB_BlogEntities();
+            //var user_ = from user in entities.Users select user;
+            //List<Users> users = user_.ToList();
+            //return users;
         }
 
         public void UpdateUser(int Id, bool IsEnable)
@@ -54,6 +57,20 @@ namespace Blog.Repositories
                 user.IsEnable = IsEnable;
                 context.SaveChanges();
             }
+        }
+
+        public void AddUser(Users user)
+        {
+            using (ObjectContext context = new ObjectContext(_connectionString))
+            {
+                var users = context.CreateObjectSet<Users>();
+                users.AddObject(user);
+
+                context.SaveChanges();
+            }
+            //MyBlogEntities entities = new MyBlogEntities();
+            //entities.User.Add(user);
+            //entities.SaveChanges();
         }
         #endregion
 

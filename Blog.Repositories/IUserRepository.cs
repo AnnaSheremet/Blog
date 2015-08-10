@@ -8,9 +8,10 @@ using Blog.Entities;
 
 namespace Blog.Repositories
 {
-    interface IUserRepository
+    public interface IUserRepository
     {
         Users GetUser(string login, string password);
         List<Users> GetUsers();
+        void AddUser(Users user);
     }
 }
