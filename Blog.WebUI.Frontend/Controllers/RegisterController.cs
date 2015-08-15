@@ -34,12 +34,12 @@ namespace Blog.WebUI.Frontend.Controllers
         {
             if (ModelState.IsValid)
             {
-                //Users _user = new Users();
-                //_user.Fist_name = user.Fist_name;
-                //_user.Surname = user.Surname;
-                //_user.Login = user.Login;
-                //_user.Password = user.Password;
-                //this._userRepository.AddUser(_user);
+                Users _user = new Users();
+                _user.Fist_name = user.Fist_name;
+                _user.Surname = user.Surname;
+                _user.Logins = user.Logins;
+                _user.Passwords = user.Passwords;
+                this._userRepository.AddUser(_user);
                 return RedirectToAction("Index", "Home");
 
             }

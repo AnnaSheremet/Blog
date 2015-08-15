@@ -1,5 +1,69 @@
-﻿@{
+﻿@model Blog.WebUI.Frontend.Models.RegisterUserModel
+
+@{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Registration Form</h2>
+<table>
+<tr>
+    <td></td>
+
+   <td>
+
+    
+    <form method="post" >
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fist_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fist_name)
+            @Html.ValidationMessageFor(model => model.Fist_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Surname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Surname)
+            @Html.ValidationMessageFor(model => model.Surname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Logins)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Logins)
+            @Html.ValidationMessageFor(model => model.Logins)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Passwords)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.Passwords)
+            @Html.ValidationMessageFor(model => model.Passwords)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfirmPassword)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </div>
+        <p>
+            <input class="button" type="submit" value="Create" />
+        </p>
+
+        
+    </form>
+
+        </td>
+ </tr>
+    <tr></tr>
+</table>
+
+

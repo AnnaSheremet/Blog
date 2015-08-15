@@ -11,22 +11,22 @@ namespace Blog.WebUI.Frontend.Models
         [DataType(DataType.Text)]
         [StringLength(32, MinimumLength = 3)]
         [Required()]
-        public string FirstName { get; set; }
+        public string Fist_name { get; set; }
 
         [DataType(DataType.Text)]
         [StringLength(32, MinimumLength = 3)]
         [Required()]
-        public string LastName { get; set; }
+        public string Surname { get; set; }
 
         [DataType(DataType.Text)]
         [StringLength(32, MinimumLength = 3)]
         [Required()]
-        public string Login { get; set; }
+        public string Logins { get; set; }
 
         [DataType(DataType.Password)]
         [StringLength(32, MinimumLength = 6)]
         [Required()]
-        public string Password { get; set; }
+        public string Passwords { get; set; }
 
         [Compare("Password")]
         [DataType(DataType.Password)]
