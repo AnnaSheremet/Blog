@@ -9,12 +9,44 @@
     List<Article> articles = ViewBag.Articles;
 }
 <div>
-    
-    <h2>List of posted articles</h2>
-    <ul>
+    <table id="Posts">
         @foreach (var article in articles)
+        {
+                if (@article.Published==true)
+                {
+                 <tr class="Title">
+                  <td>@article.Title</td> 
+                </tr>
+                <tr id="Author">
+                  <td>@article.AuthoreId</td>
+                </tr>
+                <tr id="Date">
+                  <td> @article.CreationTime</td>
+                </tr>
+                <tr id="Content">
+                  <td> @article.Content</td>
+                </tr>
+                <tr id="Comment">
+                  @if (article.Comment==true)
+                    {
+                     <td><input class="small-button w600"  type="submit" value="Переглянути коментарі" /></td>
+                    }
+                    else
+                    {
+                      <td><input class="small-button w600" type="submit" value="Додати коментар" /></td>
+                    }
+                </tr>
+                }
+                
+        }
+
+    </table>
+
+
+    @*    <ul>
+       @foreach (var article in articles)
         {
             <li>@article.Title</li>
         }
-    </ul>
+    </ul>*@
 </div>

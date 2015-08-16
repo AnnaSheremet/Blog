@@ -11,3 +11,9 @@ VALUES ( 1, 'Sport', GETDATE(), NULL, 1, 1),
 	   ( 2, 'Food', GETDATE(), NULL, 0, 1),
 	   ( 2, 'Погода', GETDATE(), NULL, 1, 1),
 	   ( 3, 'Моє місто', GETDATE(), NULL, 1, 1);
+
+
+INSERT INTO Article
+VALUES ( 1, 'Sport', GETDATE(), 'ljhvjhvljhvljhvljhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhvly hvviv', 1, 1),
+	   ( 2, 'Food', GETDATE(), 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbjhbjjjjjjjjjjjjjjjjjjjj', 0, 1);
+	

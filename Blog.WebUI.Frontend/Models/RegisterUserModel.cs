@@ -28,7 +28,7 @@ namespace Blog.WebUI.Frontend.Models
         [Required()]
         public string Passwords { get; set; }
 
-        [Compare("Password")]
+        [Compare("Passwords")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
     }

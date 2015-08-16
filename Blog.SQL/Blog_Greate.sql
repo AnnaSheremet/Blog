@@ -34,7 +34,11 @@ CREATE TABLE Article(
 	Comment bit not null
 )
 
+CREATE TABLE Comment(
+	Id int not null IDENTITY (1,1) PRIMARY KEY,
+	AuthoreId int not null foreign key REFERENCES Users(ID_User),
+	ArticleID int not null foreign key REFERENCES Article(Id),
+	CreationTime dateTime null,
+	Content nvarchar(max) null,
+)
 select * from Article
-
-metadata=res://*/BlogEntities.csdl|res://*/BlogEntities.ssdl|res://*/BlogEntities.msl;provider=System.Data.SqlClient;provider connection string="data source=Ÿ-¿Õﬂ-œ \ANNA;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
-
